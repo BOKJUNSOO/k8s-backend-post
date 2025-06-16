@@ -34,8 +34,8 @@ public class PostService {
         postCommentRepository.save(postComment);
         post.addComment(postComment);
 
-        kafkaMessageProducer.send(
-                PostCommentEvent.Topic, PostCommentEvent.fromEntity("Create", postComment)
-        );
+//        kafkaMessageProducer.send(
+//                PostCommentEvent.Topic, PostCommentEvent.fromEntity("Create", postComment)
+//        );
     }
 }
