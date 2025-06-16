@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: k8s-backend-post
-          image: bokjunsoo/k8s-backend-post:0.0.1
+          image: bokjunsoo/k8s-backend-post:0.0.2
           imagePullPolicy: Always
           env:
             - name: SPRING_PROFILES_ACTIVE
@@ -33,7 +33,7 @@ spec:
           # Readiness Probe 추가 (트래픽 유입 제어용)
           readinessProbe:
             httpGet:
-              path: /backend/post/v1/k8s/readness  # 스프링 부트 준비 상태 엔드포인트
+              path: /backend/post/v1/k8s/readiness  # 스프링 부트 준비 상태 엔드포인트
               port: 8080
             initialDelaySeconds: 30   # 컨테이너 시작 후 첫 검사까지 대기
             periodSeconds: 5          # 5초마다 체크
