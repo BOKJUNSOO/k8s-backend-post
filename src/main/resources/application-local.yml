@@ -14,9 +14,15 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create  # 오직 테스트 환경에서만
-    generate-ddl: true   # 오직 테스트 환경에서만
-    show-sql: true
+      generate-ddl: true   # 오직 테스트 환경에서만
+      show-sql: true
     open-in-view: false
 
   kafka:
     bootstrap-servers: localhost:9092
+
+  jwt:
+    expires-in: 86400 # 1day
+    mobile-expires-in: 31536000
+    table-expires-in: 31536000
+    secret-key: AADfaskllew32dsfasdTG764Gdslkj298GsWg86G
